@@ -6,8 +6,13 @@
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
 @import url(storyicofont.css);
 
-/* Colors */
+/* Colors and repeated Styles*/
 
+$bgImage: url('../images/background.jpg');
+$accent: #1ABC9C;
+$accentDarker: #149077;
+$accentLighter: #1FF2AF;
+$black: #000;
 $bgDark: #2C3E50;
 $bgDarker: #2E3641;
 $bgDarkest: #232A32;
@@ -20,11 +25,9 @@ $darkBorderSmall: 1px solid rgba(255, 255, 255, 0.1);
 $fgBlack: #404040;
 $fgGrey: #737373;
 $fgDim: #999;
-$green: #1ABC9C;
-$greenDarker: #149077;
-$greenLighter: #1FF2AF;
 $pageBg: #F1AC5F;
 $topBarH: 60px;
+$white: #FFF;
 
 a.taglib-icon:focus .taglib-text, 
 a.taglib-icon:hover .taglib-text {
@@ -34,12 +37,12 @@ a.taglib-icon:hover .taglib-text {
 body {
 	background-attachment: scroll;
 	background-color: $pageBg;
-	background-image: url('../images/background.jpg');
+	background-image: $bgImage;
 	background-position: left top;
 	background-repeat: repeat;
 
 	&.dialog-iframe-popup {
-		background: #FFF;
+		background: $white;
 	}
 }
 
@@ -61,10 +64,10 @@ html {
 	@include box-shadow($boxShadow);
 
 	#heading {
-		color: #FFF;
+		color: $white;
 		float: left;
 		height: $topBarH;
-		text-shadow: #000 1px 1px 2px;
+		text-shadow: $black 1px 1px 2px;
 
 		h1 {
 			font-size: 32px;
@@ -84,7 +87,7 @@ html {
 		float: right;
 
 		a {
-			color: #FFF;
+			color: $white;
 		}
 
 		> ul {
@@ -115,7 +118,7 @@ html {
 					width: 100%;
 
 					&:hover a {
-						color: #FFF;
+						color: $white;
 					}
 
 					a {
@@ -135,7 +138,7 @@ html {
 		}
 
 		.selected > a {
-			color: $green;
+			color: $accent;
 		}
 
 		.delete-tab {
@@ -145,7 +148,7 @@ html {
 }
 
 #content {
-	background-color: #FFF;
+	background-color: $white;
 	margin: 100px auto 40px;
 	max-width: 1145px;
 
@@ -153,7 +156,7 @@ html {
 		@include box-shadow(0 0 10px rgba(0, 0, 0, 0.2));
 
 		> .row-fluid {
-			background-color: #FFF;
+			background-color: $white;
 		}
 	}
 }
@@ -164,12 +167,12 @@ html {
 }
 
 #heading { 
-	color: #FFF;
-	text-shadow: #000 1px 1px 2px;
+	color: $white;
+	text-shadow: $black 1px 1px 2px;
 }
 
 #sign-in {
-	color: #FFF;
+	color: $white;
 	float: left;
 	line-height: 60px;
 }
@@ -182,10 +185,10 @@ html {
 
 .aui {
 	a {
-		color: #000;
+		color: $black;
 
 		&:hover, &:focus {
-			color: $greenDarker;
+			color: $accentDarker;
 			text-decoration: none;
 		}
 	}
@@ -198,7 +201,7 @@ html {
 		min-height: 100%;
 
 		&.dialog-iframe-popup {
-			background-color: #FFF;
+			background-color: $white;
 		}
 	}
 
@@ -213,7 +216,7 @@ html {
 		@include border-radius(5px);
 
 		&:focus {
-			border-color: $green;
+			border-color: $accent;
 
 			@include box-shadow(none);
 		}
@@ -224,19 +227,19 @@ html {
 	}
 
 	textarea {
-		border: 2px solid #E0E0E0;
+		border: 2px solid $fgDim;
 
 		&:focus {
-			border-color: $green;
+			border-color: $accent;
 
 			@include box-shadow(none);
 		}
 	}
 
 	.alert {
-		background-color: $greenLighter;
-		border-color: $greenDarker;
-		color: #000;
+		background-color: $accentLighter;
+		border-color: $accentDarker;
+		color: $black;
 		text-shadow: none;
 	}
 
@@ -251,16 +254,16 @@ html {
 	.btn {
 		background-image: none;
 
-		@include box-shadow(0px -1px 0 0 #000 inset);
+		@include box-shadow(0px -1px 0 0 $black inset);
 		@include transition(all 200ms ease-in-out 0s);
 
 	}
 
 	.btn-link {
-		color: $green;
+		color: $accent;
 
 		&:hover {
-			color: $greenDarker;
+			color: $accentDarker;
 		}
 	}
 
@@ -268,12 +271,12 @@ html {
 		background-color: $bgDarker;
 
 		&:hover, &:focus {
-			background-color: $green;
+			background-color: $accent;
 		}
 	}
 
 	.dockbar .navbar-inner .site-administration-menu li a {
-		color: $fgDim;
+		color: $white;
 
 		&:hover, &:focus {
 			background-color: $bgLighter;
@@ -286,7 +289,7 @@ html {
 
 	.dropdown-menu {
 		background: $bgDarker;
-		border-top: 4px solid $green;
+		border-top: 4px solid $accent;
 		border-width: 4px 0 0;
 
 		@include border-radius(0px);
@@ -295,7 +298,7 @@ html {
 		padding: 0;
 
 		> li > a {
-			color: #FFF;
+			color: $white;
 
 			&:hover, &:focus {
 				background-color: $bgLighter;
@@ -304,18 +307,18 @@ html {
 		}
 
 		.active > a {
-			background-color: $green;
+			background-color: $accent;
 			background-image: none;
 
 			&:hover, &:focus {
-				background-color: $greenDarker;
+				background-color: $accentDarker;
 				background-image: none;
 			}
 		}
 	}
 
 	.dropdown-submenu > a {
-		color: #FFF;
+		color: $white;
 		
 		&:hover, &:focus {
 			background-color: $bgLighter;
@@ -337,15 +340,15 @@ html {
 
 	.nav-list > .active > a {
 		&, &:focus, &:hover {
-			background-color: $green;
+			background-color: $accent;
 		}
 	}
 
 	.nav-pills > .active > a {
-		background-color: $green;
+		background-color: $accent;
 
 		&:focus, &:hover {
-			background-color: $greenLighter;
+			background-color: $accentLighter;
 		}
 	}
 
@@ -364,12 +367,12 @@ html {
 			
 
 			i {
-				color: #FFF;
+				color: $white;
 				height: 20px;
 				width: 20px;
 
 				&:hover {
-					color: $green;
+					color: $accent;
 				}
 			}
 
@@ -395,7 +398,7 @@ html {
 					&.active, &.active.open, &.open {
 						> .dropdown-toggle {
 							background-color: $bgLighter;
-							color: $green;
+							color: $accent;
 						}
 					}
 				}
@@ -407,22 +410,22 @@ html {
 				}
 
 				> a {
-					color: #FFF;
+					color: $white;
 					text-shadow: none;
 
 					&:focus, &:hover {
-						color: $green;
+						color: $accent;
 					}
 				}
 			}
 
 			> .active > a {
 				background-color: $bgDark;
-				color: #FFF;
+				color: $white;
 
 				&:hover {
 					background-color: $bgLighter;
-					color: #FFF;
+					color: $white;
 				}
 			}
 		}
@@ -483,7 +486,7 @@ html {
 }
 
 .navbar .container .btn-navbar:hover {
-	color: $green;
+	color: $accent;
 }
 
 .panel-page-menu {
@@ -491,7 +494,7 @@ html {
 }
 
 .portlet {
-	background: #FFF;
+	background: $white;
 	margin: 0;
 }
 
@@ -522,7 +525,7 @@ html {
 
 			&:after {
 				background: url('../images/separator.png') repeat-x scroll 0 50% transparent;
-				color: $green;
+				color: $accent;
 				content: "\e801";
 				display: block;
 				font-family: 'storyicofont';
@@ -581,7 +584,7 @@ html {
 }
 
 .portlet-borderless {
-	background: #FFF;
+	background: $white;
 }
 
 .portlet-borderless-bar {
@@ -600,12 +603,12 @@ html {
 /* Light Background */
 
 .portlet-column {
-	background-color: #FFF;
+	background-color: $white;
 	float: none;
 	margin: 0;
 
 	.taglib-categorization-filter.entry-title {
-		background-color: $green;
+		background-color: $accent;
 		font-size: 30px;
 		font-weight: 400;
 		line-height: 100px;
@@ -614,7 +617,7 @@ html {
 
 		.asset-entry {
 			border-width: 0;
-			color: #000;
+			color: $black;
 			margin: 0;
 			padding: 0;
 		}
@@ -625,14 +628,14 @@ html {
 
 .portlet-column-last {
 	background-color: $bgDark;
-	color: #DDD;
+	color: $fgDim;
 	float: none;
 	margin: 0;
 	padding: 20px;
 	vertical-align: top;
 
 	a {
-		color: $green;
+		color: $accent;
 	}
 
 	input[type="text"] {
@@ -641,7 +644,7 @@ html {
 
 		@include box-shadow(none);
 
-		color: #EEE;
+		color: $fgDim;
 	}
 
 	table {
@@ -650,16 +653,16 @@ html {
 		}
 
 		.table-sorted {
-			background-color: $green;
+			background-color: $accent;
 
 			a {
-				color: #DDD;
+				color: $white;
 			}
 		}
 	}
 
 	.nav-tabs {
-		border-bottom: 1px solid #BBB;
+		border-bottom: 1px solid $fgDim;
 
 		> li > a {
 			&:active, &:focus, &:hover {
@@ -668,8 +671,8 @@ html {
 		}
 
 		> .active > a {
-			border-color: #BBB #BBB transparent;
-			color: #DDD;
+			border-color: $fgDim $fgDim transparent;
+			color: $fgDim;
 
 			&:hover {
 				background-color: $bgLighter;
@@ -781,7 +784,7 @@ html {
 
 		.tree-node-over {
 			a, span {
-				color: $greenDarker;
+				color: $accentDarker;
 				text-decoration: none;
 			}
 		}
@@ -789,10 +792,6 @@ html {
 
 	.portlet-asset-tags-navigation .portlet-body {
 		margin-bottom: 10px;
-	}
-
-	.portlet-blogs .entry-content .entry-date:after {
-		background: url('../images/separator-dark.png') repeat-x scroll 0 50% transparent;
 	}
 
 	.portlet-boundary {
@@ -816,7 +815,7 @@ html {
 			/* Green Magnifying Glass */
 			&:after {
 				background-color: $bgLightest;
-				color: $green;
+				color: $accent;
 				content: "\e80B";
 				display: inline-block;
 				font-family: 'storyicofont';
@@ -840,7 +839,7 @@ html {
 		input[type="text"] {
 			@include box-sizing(border-box);
 			border-width: 0;
-			color: #AAA;
+			color: $fgDim;
 			height: 36px;
 			margin: 0;
 			padding: 6px;
@@ -876,7 +875,7 @@ html {
 	}
 
 	.portlet-title-text {
-		color: #FFF;
+		color: $white;
 	}
 
 	.tab.active > a {
@@ -884,7 +883,7 @@ html {
 	}
 
 	.table-striped tbody > tr:nth-child(2n+1) > td {
-		background-color: #777;
+		background-color: $bgLightest;
 
 		a {
 			color: #DDD;
@@ -898,7 +897,7 @@ html {
 	.taglib-categorization-filter.entry-title {
 		@include border-radius(5px);
 
-		color: #000;
+		color: $black;
 		line-height: 36px;
 		font-size: 14px;
 	}
@@ -922,7 +921,7 @@ html {
 }
 
 .portlet-title {
-	background-color: #FFF;
+	background-color: $white;
 	padding-left: 15px;
 }
 
@@ -940,23 +939,23 @@ html {
 }
 
 .powered-by {
-	color: #FFF;
+	color: $white;
 	margin-top: 15px;
 	text-align: center;
-	text-shadow: #000 1px 1px 2px;
+	text-shadow: $black 1px 1px 2px;
 
 	a {
-		color: $greenLighter;
+		color: $accentLighter;
 	}
 }
 
 .separator {
-	border-top: 6px $green solid;
+	border-top: 6px $accent solid;
 }
 
 .taglib-categorization-filter .asset-entry {
-	background-color: $green;
-	border-color: $greenDarker;
+	background-color: $accent;
+	border-color: $accentDarker;
 }
 
 .taglib-header {
@@ -983,7 +982,7 @@ html {
 }
 
 .taglib-social-bookmarks {
-	background: #FFF;;
+	background: $white;;
 }
 
 /* Size specific styles */
@@ -1050,7 +1049,7 @@ html {
 				}
 
 				> a:hover {
-					color: #DDD;
+					color: $fgDim;
 				}
 
 				ul {
@@ -1119,7 +1118,7 @@ html {
 				a {
 					@include border-radius(0);
 
-					color: #FFF;
+					color: $white;
 
 					&:hover {
 						background-color: $bgDark;
@@ -1191,6 +1190,6 @@ html {
 	}
 
 	.portlet-layout {
-		background-color: #FFF;
+		background-color: $white;
 	}
 }
