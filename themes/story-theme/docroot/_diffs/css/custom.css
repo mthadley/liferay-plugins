@@ -8,7 +8,6 @@
 
 /* Colors and repeated Styles*/
 
-$bgImage: url('../images/background.jpg');
 $accent: #1ABC9C;
 $accentDarker: #149077;
 $accentLighter: #1FF2AF;
@@ -16,6 +15,7 @@ $black: #000;
 $bgDark: #2C3E50;
 $bgDarker: #2E3641;
 $bgDarkest: #232A32;
+$bgImage: url('../images/background.jpg');
 $bgLighter: #3F4A59;
 $bgLightest: #34495E;
 $border: 2px solid #E0E0E0;
@@ -174,7 +174,7 @@ html {
 #sign-in {
 	color: $white;
 	float: left;
-	line-height: 60px;
+	line-height: $topBarH;
 }
 
 #wrapper {
@@ -437,7 +437,7 @@ html {
 		@include box-shadow(none);
 
 		float: left;
-		height: 60px;
+		height: $topBarH;
 		left: auto;
 		position: relative;
 		z-index: 656;
@@ -1033,7 +1033,7 @@ html {
 
 		> ul {
 			background-color: $bgDarker;
-			margin: 60px 0 0;
+			margin: $topBarH 0 0;
 
 			@include box-shadow($boxShadow);
 
@@ -1099,7 +1099,7 @@ html {
 			}
 
 			.nav.nav-add-controls {
-				margin: 60px 0 0;
+				margin: $topBarH 0 0;
 			}
 		}
 
@@ -1159,7 +1159,7 @@ html {
 
 		.nav.nav-add-controls {
 			left: auto;
-			margin: 60px 0 0;
+			margin: $topBarH 0 0;
 			right: 0;
 			width: auto;
 
