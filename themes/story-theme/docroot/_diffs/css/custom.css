@@ -592,6 +592,281 @@ html {
 	}
 }
 
+/* Light Background */
+
+.portlet-column {
+	background-color: #FFF;
+	float: none;
+	margin: 0;
+}
+
+/* Dark Background */
+
+.portlet-column-last {
+	background-color: $bgDark;
+	color: #DDD;
+	float: none;
+	margin: 0;
+	padding: 20px;
+	vertical-align: top;
+
+	a {
+		color: $green;
+	}
+
+	input[type="text"] {
+		background-color: $bgLightest;
+		border-color: $bgLightest;
+
+		@include box-shadow(none);
+
+		color: #EEE;
+	}
+
+	table {
+		tr:hover {
+			background-color: $bgLighter;
+		}
+
+		.table-sorted {
+			background-color: $green;
+
+			a {
+				color: #DDD;
+			}
+		}
+	}
+
+	.nav-tabs {
+		border-bottom: 1px solid #BBB;
+
+		> li > a {
+			&:active, &:focus, &:hover {
+				background-color: $bgLighter;
+			}
+		}
+
+		> .active > a {
+			border-color: #BBB #BBB transparent;
+			color: #DDD;
+
+			&:hover {
+				background-color: $bgLighter;
+			}
+		}
+	}
+
+	.portlet {
+		background-color: $bgDark;
+	}
+
+	.portlet-asset-categories-navigation,
+	.portlet-asset-publisher,
+	.portlet-asset-tags-navigation	 {
+
+		img {
+			display: none;
+		}
+
+		.accordion-group {
+			border-width: 0;
+
+			.accordion-heading {
+				display: none;
+			}
+
+			.accordion-inner {
+				border-width: 0;
+				padding: 0;
+			}
+
+			.tree-normal {
+				margin: 0;
+
+				.tree-node {
+					border-bottom: $darkBorderSmall;
+					padding: 0 1px 0 0;
+
+					&:last-child {
+						border-width: 0;
+					}
+				}
+
+				.tree-node-leaf {
+					margin: 0;
+					padding: 10px 0;
+
+					.tree-label {
+						margin-left: 0;
+						padding: 0;
+
+						span {
+							padding-left: 0;
+						}
+					}
+				}
+			}
+
+			.title-text {
+				display: none;
+			}
+		}
+
+		.asset-abstract {
+			margin-bottom: 10px;
+		}
+
+		.asset-content {
+			margin: 0;
+		}
+
+		.asset-title {
+			border-bottom: $darkBorderSmall;
+		}
+
+		&.portlet-boundary {
+			margin: 0;
+			padding: 0;
+		}
+
+		.portlet-content {
+			padding: 0;
+		}
+
+		.portlet-title {
+			margin: 0;
+			padding: 0;
+		}
+
+		.title-list {
+			li {
+				border-bottom: $darkBorderSmall;
+				padding: 10px 0;
+
+				&:last-child {
+					border-width: 0;
+				}
+			}
+		}
+
+	}
+
+	.portlet-asset-tags-navigation .portlet-body {
+		margin-bottom: 10px;
+	}
+
+	.portlet-blogs .entry-content .entry-date:after {
+		background: url('../images/separator-dark.png') repeat-x scroll 0 50% transparent;
+	}
+
+	.portlet-boundary {
+		background-color: $bgDark;
+		border-bottom: $darkBorder;
+		padding: 0 0 15px;
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+
+	.portlet-content {
+		padding: 12px 0 10px;
+	}
+
+	.portlet-search {
+		form {
+			margin: 0;
+
+			/* Green Magnifying Glass */
+			&:after {
+				background-color: $bgLightest;
+				color: $green;
+				content: "\e80B";
+				display: inline-block;
+				font-family: 'storyicofont';
+				height: 22px;
+				padding-left: 5px;
+				position: relative;
+				right: -87%;
+				top: -29px;
+				width: 10%;
+			}
+		}
+
+		img {
+			display: none;
+		}
+
+		input[type="image"] {
+			display: none;
+		}
+
+		input[type="text"] {
+			@include box-sizing(border-box);
+			border-width: 0;
+			color: #AAA;
+			height: 36px;
+			margin: 0;
+			padding: 6px;
+			width: 100%;
+		}
+
+		select {
+			display: none;
+		}
+
+		.portlet-title {
+			height: 10px;
+			margin: 0;
+
+			span {
+				display: none;
+			}
+		}
+
+		.portlet-body {
+			width: 100%;
+		}
+
+		.result {
+			padding: 15px;
+		}
+	}
+
+	.portlet-title {
+		background-color: $bgDark;
+	}
+
+	.portlet-title-text {
+		color: #FFF;
+	}
+
+	.tab.active > a {
+		background-color: $bgLighter;
+	}
+
+	.table-striped tbody > tr:nth-child(2n+1) > td {
+		background-color: #777;
+
+		a {
+			color: #DDD;
+		}
+	}
+
+	.table-striped tbody > tr:hover {
+		background-color: #F00;
+	}
+
+	.taglib-categorization-filter.entry-title {
+		color: #EEE;
+	}
+
+	.well {
+		background-color: $bgDarkest;
+		border-width: 0;
+	}
+}
+
 .portlet-dockbar {
 	padding: 0;
 }
@@ -669,9 +944,11 @@ html {
 	background: #FFF;;
 }
 
+
+
 /* Size specific styles */
 
-/* Dark Sidebar Layout, requires a wider display */
+/* Table layout for wider displays */
 @media (min-width: 768px) {
 	.aui {
 		.portlet-layout.row-fluid [class*="span"] {
@@ -696,285 +973,6 @@ html {
 			.span8 {
 				width: 70%;
 			}
-		}
-	}
-
-	.portlet-layout {
-		display: table;
-	}
-
-	/* Light Background */
-
-	.portlet-column {
-		background-color: #FFF;
-		float: none;
-		margin: 0;
-	}
-
-	/* Dark Background */
-
-	.portlet-column-last {
-		background-color: $bgDark;
-		color: #DDD;
-		float: none;
-		margin: 0;
-		padding: 20px;
-		vertical-align: top;
-
-		a {
-			color: $green;
-		}
-
-		input[type="text"] {
-			background-color: $bgLightest;
-			border-color: $bgLightest;
-
-			@include box-shadow(none);
-			
-			color: #EEE;
-		}
-
-		table {
-			tr:hover {
-				background-color: $bgLighter;
-			}
-
-			.table-sorted {
-				background-color: $green;
-
-				a {
-					color: #DDD;
-				}
-			}
-		}
-
-		.nav-tabs {
-			border-bottom: 1px solid #BBB;
-
-			> li > a {
-				&:active, &:focus, &:hover {
-					background-color: $bgLighter;
-				}
-			}
-
-			> .active > a {
-				border-color: #BBB #BBB transparent;
-				color: #DDD;
-
-				&:hover {
-					background-color: $bgLighter;
-				}
-			}
-		}
-
-		.portlet {
-			background-color: $bgDark;
-		}
-
-		.portlet-asset-categories-navigation,
-		.portlet-asset-publisher,
-		.portlet-asset-tags-navigation	 {
-
-			img {
-				display: none;
-			}
-
-			.accordion-group {
-				border-width: 0;
-
-				.accordion-heading {
-					display: none;
-				}
-
-				.accordion-inner {
-					border-width: 0;
-					padding: 0;
-				}
-
-				.tree-normal {
-					margin: 0;
-
-					.tree-node {
-						border-bottom: $darkBorderSmall;
-						padding: 0 1px 0 0;
-
-						&:last-child {
-							border-width: 0;
-						}
-					}
-
-					.tree-node-leaf {
-						margin: 0;
-						padding: 10px 0;
-
-						.tree-label {
-							margin-left: 0;
-							padding: 0;
-
-							span {
-								padding-left: 0;
-							}
-						}
-					}
-				}
-
-				.title-text {
-					display: none;
-				}
-			}
-
-			.asset-abstract {
-				margin-bottom: 10px;
-			}
-
-			.asset-content {
-				margin: 0;
-			}
-
-			.asset-title {
-				border-bottom: $darkBorderSmall; 
-			}
-
-			&.portlet-boundary {
-				margin: 0;
-				padding: 0;
-			}
-
-			.portlet-content {
-				padding: 0;
-			}
-
-			.portlet-title {
-				margin: 0;
-				padding: 0;
-			}
-
-			.title-list {
-				li {
-					border-bottom: $darkBorderSmall;
-					padding: 10px 0;
-
-					&:last-child {
-						border-width: 0;
-					}
-				}
-			}
-
-		}
-
-		.portlet-asset-tags-navigation .portlet-body {
-			margin-bottom: 10px;
-		}
-
-		.portlet-blogs .entry-content .entry-date:after {
-			background: url('../images/separator-dark.png') repeat-x scroll 0 50% transparent;
-		}
-
-		.portlet-boundary {
-			background-color: $bgDark;
-			border-bottom: $darkBorder;
-			padding: 0 0 15px;
-
-			&:last-child {
-				border-bottom: none;
-			}
-		}
-
-		.portlet-content {
-			padding: 12px 0 10px;
-		}
-
-		.portlet-search {
-			form {
-				margin: 0;
-
-				/* Green Magnifying Glass */
-				&:after {
-					background-color: $bgLightest;
-					color: $green;
-					content: "\e80B";
-					display: inline-block;
-					font-family: 'storyicofont';
-					height: 22px;
-					padding-left: 5px;
-					position: relative;
-					right: -87%;
-					top: -29px;
-					width: 10%;
-				}
-			}
-
-			img {
-				display: none;
-			}
-
-			input[type="image"] {
-				display: none;
-			}
-
-			input[type="text"] {
-				@include box-sizing(border-box);
-				border-width: 0;
-				color: #AAA;
-				height: 36px;
-				margin: 0;
-				padding: 6px;
-				width: 100%;
-			}
-
-			select {
-				display: none;
-			}
-
-			.portlet-title {
-				height: 10px;
-				margin: 0;
-
-				span {
-					display: none;
-				}
-			}
-
-			.portlet-body {
-				width: 100%;
-			}
-
-			.result {
-				padding: 15px;
-			}
-		}
-
-		.portlet-title {
-			background-color: $bgDark;
-		}
-
-		.portlet-title-text {
-			color: #FFF;
-		}
-
-		.tab.active > a {
-			background-color: $bgLighter;
-		}
-
-		.table-striped tbody > tr:nth-child(2n+1) > td {
-			background-color: #777;
-
-			a {
-				color: #DDD;
-			}
-		}
-
-		.table-striped tbody > tr:hover {
-			background-color: #F00;
-		}
-
-		.taglib-categorization-filter.entry-title {
-			color: #EEE;
-		}
-
-		.well {
-			background-color: $bgDarkest;
-			border-width: 0;
 		}
 	}
 }
