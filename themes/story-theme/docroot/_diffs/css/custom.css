@@ -19,6 +19,7 @@ $darkBorder: 4px solid rgba(255, 255, 255, 0.1);
 $darkBorderSmall: 1px solid rgba(255, 255, 255, 0.1);
 $fgBlack: #404040;
 $fgGrey: #737373;
+$fgDim: #999;
 $green: #1ABC9C;
 $greenDarker: #149077;
 $greenLighter: #1FF2AF;
@@ -82,8 +83,8 @@ html {
 	#navigation {
 		float: right;
 
-		.delete-tab {
-			display: none;
+		a {
+			color: #FFF;
 		}
 
 		> ul {
@@ -112,6 +113,14 @@ html {
 					height: 100%;
 					margin: 0;
 					width: 100%;
+
+					&:hover a {
+						color: #FFF;
+					}
+
+					a {
+						color: $fgDim;
+					}
 				}
 			}
 
@@ -129,8 +138,8 @@ html {
 			color: $green;
 		}
 
-		a {
-			color: #FFF;
+		.delete-tab {
+			display: none;
 		}
 	}
 }
@@ -264,7 +273,7 @@ html {
 	}
 
 	.dockbar .navbar-inner .site-administration-menu li a {
-		color: #FFF;
+		color: $fgDim;
 
 		&:hover, &:focus {
 			background-color: $bgLighter;
@@ -311,6 +320,12 @@ html {
 		&:hover, &:focus {
 			background-color: $bgLighter;
 			background-image: none;
+		}
+	}
+
+	.input-append {
+		button.btn, input {
+			vertical-align: middle;
 		}
 	}
 
