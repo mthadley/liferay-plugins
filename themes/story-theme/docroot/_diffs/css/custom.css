@@ -739,11 +739,6 @@ html {
 			padding: 0;
 		}
 
-		.portlet-title {
-			margin: 0;
-			padding: 0;
-		}
-
 		.title-list {
 			li {
 				border-bottom: $darkBorderSmall;
@@ -755,6 +750,19 @@ html {
 			}
 		}
 
+	}
+
+	.portlet-asset-categories-navigation 
+	.accordion-group .tree-normal {
+		.tree-node {
+			border-width: 0;
+		}
+
+		.tree-node-leaf {
+			background-color: $bgLightest;
+			margin-bottom: 1px;
+			padding-left: 15px;
+		}
 	}
 
 	.portlet-asset-tags-navigation .portlet-body {
@@ -841,6 +849,8 @@ html {
 
 	.portlet-title {
 		background-color: $bgDark;
+		margin: 15px 0px 5px;
+		padding: 0;
 	}
 
 	.portlet-title-text {
