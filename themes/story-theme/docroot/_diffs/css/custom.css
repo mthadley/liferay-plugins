@@ -917,6 +917,7 @@ html {
 }
 
 .portlet-layout {
+	display: table;
 	margin-top: 0;
 }
 
